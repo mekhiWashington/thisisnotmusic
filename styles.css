@@ -1,0 +1,255 @@
+@import url("https://fonts.googleapis.com/css2?family=Jomhuria&family=Lacquer&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+body {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  user-select: none;
+}
+
+.head {
+  width: 100%;
+  height: 10%;
+  background-image: url("images/wood.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0px 5px 5px 0px black;
+  position: relative; /* Add this */
+}
+
+.title {
+  font-size: clamp(24px, 5vw, 86px);
+  color: whitesmoke;
+  font-family: "Lacquer";
+  text-shadow: black 1px 2px 10px;
+}
+
+.content {
+  font-family: "Lacquer";
+  width: 100%;
+  height: 90%;
+  background-image: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  user-select: none;
+}
+
+.row-1,
+.row-3 {
+  overflow: hidden;
+  width: 100%;
+  height: 20%;
+}
+
+.welcome {
+  text-align: center;
+  color: whitesmoke;
+  font-size: clamp(16px, 3vw, 24px);
+}
+
+.row-2 {
+  width: 100%;
+  height: 60%;
+  display: flex;
+}
+
+.album {
+  margin: 5px;
+  width: calc(20% - 10px);
+  height: 100%; /* Ensure the album container takes up full available height */
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: flex-start; /* Align content at the top */
+  text-align: center; /* Align text to the center */
+  user-select: none;
+}
+
+.album h2 {
+  margin-top: 10px; /* Add some space between the image and the text */
+  color: white; /* Ensure text is visible */
+  word-wrap: break-word; /* Ensure long words break properly */
+  word-break: break-word; /* Handle long words breaking within the box */
+}
+
+.album-img {
+  width: 100%;
+  height: auto;
+  max-height: 100%; /* Prevent image from overflowing */
+  object-fit: cover;
+  user-select: none;
+}
+
+.album-img:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+  filter: brightness(1.5);
+  border: 10px double var(--glow-color);
+
+}
+.reroll:hover img {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+  transform: scale(1.05);
+}
+
+.album:active,
+.reroll:active {
+  transform: scale(0.95);
+}
+
+.center-content {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.reroll {
+  background: transparent;
+  border: none; /* If there's a border you want to remove */
+}
+
+.dissapear {
+  display: none;
+}
+
+.pink {
+  background-color: pink;
+}
+
+.light-blue {
+  background-color: lightblue;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+.dissapear {
+  display: flex;
+}
+
+@media (max-width: 820px) {
+  .dissapear {
+    display: none;
+  }
+  .album {
+    width: calc(50% - 10px);
+    height: calc(100% - 10px);
+  }
+  #album-modal-containter {
+    width: 25%;
+    height: 25%;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 500px) {
+  .modal-content {
+    flex-direction: column-reverse; /* Move the image to the bottom */
+    align-items: center; /* Center content horizontally */
+    justify-content: flex-end; /* Align image and content to the bottom */
+    padding: 20px;
+    max-height: 90vh; /* Ensure modal does not overflow the viewport height */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+
+  #album-modal-containter {
+    width: 50%; /* Adjust width of the image */
+    height: auto; /* Allow height to adjust naturally */
+    margin-top: 10px; /* Space between image and content */
+  }
+
+  .modal-album-title {
+    font-size: clamp(14px, 5vw, 22px); /* Adjust font size for mobile */
+    text-align: center; /* Center the title */
+  }
+
+  .modal-album-about {
+    font-size: clamp(12px, 4vw, 18px); /* Adjust font size for the description */
+    text-align: center; /* Center the description text */
+    margin-top: 10px;
+  }
+
+  .album-img {
+    width: 100%; /* Ensure image takes up full width */
+    height: auto;
+    max-height: 200px; /* Limit the image height */
+    object-fit: cover;
+    margin-bottom: 10px; /* Add space below the image */
+  }
+}
+
+/* Image styling */
+.fixed-bottom-right {
+  position: fixed; /* Fix the position of the image relative to the viewport */
+  bottom: 20px; /* Space from the bottom */
+  left: 20px; /* Space from the right */
+  width: 100px; /* Set width of the image */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 1000; /* Make sure the image stays on top */
+  display: block; /* Display the image */
+}
+
+/* Hide the image on tablet and mobile */
+@media (max-width: 820px) {
+  .fixed-bottom-right {
+    display: none; /* Hide the image */
+  }
+}
+
+
+
+.modal-text {
+  display: block;
+  font-family: "Oswald";
+  margin-left: 10px;
+  top: 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100; /* Sit on top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.4); /* Black with opacity */
+}
+
+/* Desktop styles for modal content */
+.modal-content{
+  display: flex;
+  background-color: white;
+  color: white;
+  padding: 20px;
+  height: 70%;
+  width: 80%;
+  margin: auto;
+}
+
+.modal-content a {
+  color: white;
+}
+
+.modal-album-title {
+  font-size: clamp(24px, 4vw, 32px);
+}
+
+.modal-album-title {
+  font-size: clamp(10px, 4vw, 20px);
+}

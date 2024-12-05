@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/png" href="images/turntable.png" />
+    <title>This Is Not Music</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="head center-content pink">
+      <h1 class="title">This Is Not Music</h1>
+    </div>
+    <div class="content light-blue">
+      <div class="center-content row-1">
+        <p id="about" class="welcome">
+          Explore the vibrant world of music across genres and discover the
+          unique rhythms and stories each style has to offer... <br />58,905
+          Different Combinations! (Sounds Compressed to Meet File Size
+          Limitations)
+        </p>
+      </div>
+      <div class="row-2 center-content" id="album-container">
+        <!-- JavaScript will dynamically generate album cards here -->
+      </div>
+      <div class="center-content row-3">
+        <button class="reroll" onclick="rerollAlbums()">
+          <img src="images/reroll.png" />
+        </button>
+      </div>
+    </div>
+
+    <div id="myModal" class="modal center-content">
+      <!-- Modal content -->
+      <div id="modal-content" class="modal-content">
+        <img id="album-modal-containter" src="images/covers/pride.jpg" />
+        <div class="modal-text">
+          <div class="modal-album-title"></div>
+          <div class="modal-album-about"></div>
+        </div>
+      </div>
+    </div>
+    <img class="fixed-bottom-right" src="images/qrcode.png">
+    <script src="script.js"></script>
+    <script src="preload.js"></script>
+  </body>
+</html>
